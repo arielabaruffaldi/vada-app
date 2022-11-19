@@ -7,6 +7,27 @@
       "@theme/*": [
         "src/theme/*"
       ],
+      "@atoms/*": [
+        "src/components/atoms/*"
+      ],
+      "@molecules/*": [
+        "src/components/molecules/*"
+      ],
+      "@organisms/*": [
+        "src/components/organisms/*"
+      ],
+      "@screens/*": [
+        "src/screens/*"
+      ],
+      "@assets": [
+        "src/assets"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@store/*": [
+        "src/store/*"
+      ],
     }
   }
 }

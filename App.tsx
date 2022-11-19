@@ -1,7 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Fonts } from '@theme';
+import { StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
+
+import { Fonts } from '@theme';
+import Text from '@atoms/Text';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -16,7 +18,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text size="large" weight='bold'>Recomendados para vos</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -24,10 +26,5 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    fontFamily: Fonts.DMSans_REGULAR,
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

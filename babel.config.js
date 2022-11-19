@@ -7,6 +7,13 @@ module.exports = function (api) {
         "root": ["./src"],
         "alias": {
           "@theme": "./src/theme",
+          '@assets': './src/assets',
+          '@atoms': './src/components/atoms',
+          '@molecules': './src/components/molecules',
+          '@organisms': './src/components/organisms',
+          '@screens': './src/screens',
+          '@utils': './src/utils',
+          '@store': './src/store',
         },
         "extensions": [
           ".js",

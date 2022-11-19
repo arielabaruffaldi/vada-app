@@ -1,8 +1,8 @@
 export const SIZES = {
-  XSMALL: 13,
-  SMALL: 15,
-  MEDIUM: 23,
-  LARGE: 32,
+  XSMALL: 14,
+  SMALL: 17,
+  MEDIUM: 22,
+  LARGE: 34,
 };
 
 export const DMSans_REGULAR = 'DMSans-Regular';

@@ -4,8 +4,8 @@
     "baseUrl": ".",
     "strict": true,
      "paths": {
-      "@theme/*": [
-        "src/theme/*"
+      "@theme": [
+        "src/theme"
       ],
       "@atoms/*": [
         "src/components/atoms/*"
@@ -27,6 +27,12 @@
       ],
       "@store/*": [
         "src/store/*"
+      ],
+      "@containers/*": [
+        "src/containers/*"
+      ],
+      "@navigation": [
+        "src/navigation"
       ],
     }
   }

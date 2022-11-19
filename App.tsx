@@ -1,9 +1,9 @@
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
 
+import { Fonts } from '@theme';
 import Text from '@atoms/Text';
-
-import Home from '@screens/Main/Home';
-import AppNavigation from '@navigation';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -17,7 +17,14 @@ export default function App() {
   }
 
   return (
-    <AppNavigation />
+    <View style={styles.container}>
+      <Text size="large" weight='bold'>Recomendados para vos</Text>
+      <StatusBar style="auto" />
+    </View>
   );
 }
 
+const styles = StyleSheet.create({
+  container: {
+  },
+});

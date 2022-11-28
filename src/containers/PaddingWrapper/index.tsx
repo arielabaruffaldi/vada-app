@@ -1,23 +1,22 @@
-import { ReactNode } from "react";
-import { ScrollView, TextStyle, View } from "react-native"
-import { SafeAreaView } from "react-navigation"
+import { FC, ReactNode } from 'react'
+import { ScrollView, TextStyle } from 'react-native'
+import { SafeAreaView } from 'react-navigation'
 
-import { useHeaderHeight } from '@react-navigation/elements';
-import { getDefaultHeaderHeight } from '@react-navigation/elements';
-import { useSafeAreaFrame, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { getDefaultHeaderHeight } from '@react-navigation/elements'
+import { useSafeAreaFrame, useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import makeStyles from "./styles";
+import makeStyles from './styles'
 
 interface PaddingWrapperProps {
   children: ReactNode
   hasPadding?: boolean
-  style?: TextStyle | TextStyle[];
+  style?: TextStyle | TextStyle[]
 }
 
-const PaddingWrapper = ({ children, hasPadding, style }: PaddingWrapperProps) => {
-  const frame = useSafeAreaFrame();
-  const insets = useSafeAreaInsets();
-  const headerHeight = getDefaultHeaderHeight(frame, false, insets.top);
+const PaddingWrapper: FC<PaddingWrapperProps> = ({ children, hasPadding = false, style }) => {
+  const frame = useSafeAreaFrame()
+  const insets = useSafeAreaInsets()
+  const headerHeight = getDefaultHeaderHeight(frame, false, insets.top)
   const styles = makeStyles(headerHeight)
 
   return (

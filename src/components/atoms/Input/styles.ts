@@ -1,7 +1,7 @@
-import { Colors, Constants, Spacing } from '@theme';
-import { StyleSheet } from 'react-native';
-import { isIos } from '@theme/constants';
-import { Fonts } from '@theme/index';
+import { Colors, Constants, Spacing } from '@theme'
+import { StyleSheet } from 'react-native'
+import { isIos } from '@theme/constants'
+import { Fonts } from '@theme/index'
 
 export default StyleSheet.create({
   container: {
@@ -10,7 +10,7 @@ export default StyleSheet.create({
     alignContent: 'center',
     alignSelf: 'center',
     alignItems: 'center',
-    width: '100%',
+    width: '100%'
   },
   input: {
     borderRadius: Constants.borderRadius,
@@ -18,10 +18,10 @@ export default StyleSheet.create({
     paddingVertical: isIos ? Spacing.MEDIUM : Spacing.SMALL,
     // borderWidth: 1,
     // borderColor: Colors.black,
-    width: '100%',
+    width: '100%'
   },
   error: {
-    color: Colors.error,
+    color: Colors.error
   },
   outlined: {
     borderColor: Colors.lightGray,
@@ -29,7 +29,7 @@ export default StyleSheet.create({
     borderRadius: 100
   },
   contained: {
-    backgroundColor: Colors.lightGray,
+    backgroundColor: Colors.lightGray
   },
   text: {
     padding: 0,
@@ -44,4 +44,4 @@ export default StyleSheet.create({
   medium: {
     fontSize: Fonts.SIZES.MEDIUM
   }
-});
+})

@@ -1,26 +1,26 @@
-import Text from '@atoms/Text';
-import { Colors } from '@theme';
-import React, { useState } from 'react';
-import { TextInput, View, KeyboardTypeOptions, TextStyle } from 'react-native';
+import Text from '@atoms/Text'
+import { Colors } from '@theme'
+import React, { FC } from 'react'
+import { TextInput, View, KeyboardTypeOptions, TextStyle } from 'react-native'
 
-import styles from './styles';
+import styles from './styles'
 
 interface InputProps {
-  placeholder?: string;
-  keyboardType?: KeyboardTypeOptions;
-  autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters';
-  autoCorrect?: boolean;
-  placeholderTextColor?: 'black' | 'white' | 'gray';
-  secureTextEntry?: boolean;
-  onChangeText?: (text: string) => void;
-  value?: string;
-  error?: string;
-  style?: TextStyle | TextStyle[];
-  variant?: 'outlined' | 'contained' | 'text',
+  placeholder?: string
+  keyboardType?: KeyboardTypeOptions
+  autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters'
+  autoCorrect?: boolean
+  placeholderTextColor?: 'black' | 'white' | 'gray'
+  secureTextEntry?: boolean
+  onChangeText?: (text: string) => void
+  value?: string
+  error?: string
+  style?: TextStyle | TextStyle[]
+  variant?: 'outlined' | 'contained' | 'text'
   size?: 'xsmall' | 'small' | 'medium'
 }
 
-const Input = ({
+const Input: FC<InputProps> = ({
   placeholder,
   keyboardType,
   autoCapitalize,
@@ -33,8 +33,7 @@ const Input = ({
   style,
   variant = 'contained',
   size = 'xsmall'
-}: InputProps) => {
-
+}) => {
   return (
     <>
       <View style={[styles.container, style]}>
@@ -52,7 +51,7 @@ const Input = ({
       </View>
       {error !== '' && <Text>{error}</Text>}
     </>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input

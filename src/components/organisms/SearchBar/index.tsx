@@ -1,13 +1,13 @@
-import { TextInput, View } from "react-native"
-import { useState } from "react"
+import { View } from 'react-native'
+import { FC, useState } from 'react'
 
 import { AntDesign } from '@expo/vector-icons'
 
-import Input from "@atoms/Input"
+import Input from '@atoms/Input'
 
-import styles from './styles.ts'
+import styles from './styles'
 
-const SearchBar = () => {
+const SearchBar: FC = () => {
   const [searchVal, setSearchVal] = useState('')
   return (
     <View style={styles.container}>

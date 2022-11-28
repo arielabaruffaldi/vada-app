@@ -1,25 +1,21 @@
-import { Dimensions, PixelRatio, StyleSheet } from 'react-native';
-import { Colors, Fonts } from '@theme';
-import { Spacing } from '@theme/index';
-
-const windowDimensions = Dimensions.get('window');
+import { PixelRatio, StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
   imageStyle: {
     height: PixelRatio.getPixelSizeForLayoutSize(135),
-    width: '100%',
+    width: '100%'
   },
   wrapper: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 30,
+    marginVertical: 30
   },
   header: {
     fontSize: 30,
     fontWeight: 'bold',
-    marginBottom: 20,
+    marginBottom: 20
   },
   paragraph: {
-    fontSize: 17,
-  },
-});
+    fontSize: 17
+  }
+})

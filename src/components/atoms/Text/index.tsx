@@ -1,24 +1,24 @@
-import React, { ReactNode } from 'react';
-import { Text as TextNative, TextStyle } from 'react-native';
-import styles from './styles';
+import React, { FC, ReactNode } from 'react'
+import { Text as TextNative, TextStyle } from 'react-native'
+import styles from './styles'
 
 interface TextProps {
-  style?: TextStyle | TextStyle[];
-  size?: 'xsmall' | 'small' | 'medium' | 'large';
-  weight?: 'light' | 'regular' | 'bold';
-  color?: 'black' | 'white' | 'gray' | 'orange' | 'error' | 'violet';
-  align?: 'left' | 'center' | 'right';
-  children?: ReactNode;
+  style?: TextStyle | TextStyle[]
+  size?: 'xsmall' | 'small' | 'medium' | 'large'
+  weight?: 'light' | 'regular' | 'bold'
+  color?: 'black' | 'white' | 'gray' | 'orange' | 'error' | 'violet'
+  align?: 'left' | 'center' | 'right'
+  children?: ReactNode
 }
 
-const Text = ({
+const Text: FC<TextProps> = ({
   style,
   size = 'small',
   weight = 'regular',
   color = 'black',
   align = 'left',
-  children,
-}: TextProps) => {
+  children
+}) => {
   return (
     <TextNative
       style={[
@@ -27,11 +27,11 @@ const Text = ({
         styles[weight],
         styles[color],
         styles[align],
-        style,
+        style
       ]}>
       {children}
     </TextNative>
-  );
-};
+  )
+}
 
-export default Text;
+export default Text

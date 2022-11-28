@@ -1,6 +1,5 @@
-import { Colors, Spacing } from '@theme';
-import { StyleSheet } from 'react-native';
-import { Constants } from '@theme';
+import { Colors, Spacing, Constants } from '@theme'
+import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,28 +7,28 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     alignSelf: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   button: {
     borderRadius: Constants.borderRadius,
-    padding: Spacing.SMALL,
+    padding: Spacing.SMALL
   },
 
-  //colors
+  // colors
   primary: {
-    backgroundColor: Colors.violet,
+    backgroundColor: Colors.violet
   },
   secondary: {
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.white
   },
   tertiary: {
     backgroundColor: 'transparent',
-    padding: 0,
+    padding: 0
   },
-  
-  //variation
+
+  // variation
   contained: {
-    backgroundColor: Colors.violet,
+    backgroundColor: Colors.violet
   },
   text: {
     backgroundColor: 'transparent',
@@ -38,9 +37,9 @@ export const styles = StyleSheet.create({
   outline: {
     backgroundColor: 'transparent',
     borderWidth: 1,
-    borderColor: Colors.black,
+    borderColor: Colors.black
   },
   disabled: {
-    opacity: 0.35,
+    opacity: 0.35
   }
-});
+})

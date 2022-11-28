@@ -1,8 +1,7 @@
-import { Dimensions, StyleSheet } from 'react-native';
-import { Colors, Fonts } from '@theme';
-import { Spacing } from '@theme/index';
+import { Dimensions, StyleSheet } from 'react-native'
+import { Spacing } from '@theme/index'
 
-const windowDimensions = Dimensions.get('window');
+const windowDimensions = Dimensions.get('window')
 
 export default StyleSheet.create({
   container: {
@@ -10,12 +9,12 @@ export default StyleSheet.create({
   },
   title: {
     marginTop: Spacing.LARGE,
-    width: windowDimensions.width - Spacing.XLARGE,
+    width: windowDimensions.width - Spacing.XLARGE
   },
-  carrouselTitle:{
+  carrouselTitle: {
     marginTop: Spacing.LARGE,
     marginBottom: Spacing.MEDIUM,
     marginHorizontal: Spacing.LATERAL,
     textDecorationLine: 'underline'
   }
-});
+})

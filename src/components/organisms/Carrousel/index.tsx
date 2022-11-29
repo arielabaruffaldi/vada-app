@@ -1,14 +1,21 @@
-import Text from '@atoms/Text'
-import { Spacing } from '@theme/index'
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { FC, useCallback, useRef, useState } from 'react'
 import {
-  FlatList,
   Image,
+  FlatList,
   TextStyle,
   View
 } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import { NavigationScreenProp } from 'react-navigation'
+
+import Text from '@atoms/Text'
+import { Spacing } from '@theme/index'
 
 const Slide: FC<{ data: any }> = ({ data }) => {
+  const navigation: NavigationScreenProp<any, any> = useNavigation()
+
   return (
     <View
       style={{
@@ -17,27 +24,34 @@ const Slide: FC<{ data: any }> = ({ data }) => {
         marginHorizontal: Spacing.LATERAL
       }}
     >
-      <Image
-        source={{ uri: data.image }}
-        style={{
-          width: 170,
-          height: 170,
-          borderRadius: 100,
-          marginBottom: Spacing.MEDIUM
-        }}
-      />
-      <Text size="medium">{data.title}</Text>
-      <Text size="xsmall" color="gray">
-        {data.subtitle}
-      </Text>
-      <Text
-        size="small"
-        color="violet"
-        weight="bold"
-        style={{ marginTop: Spacing.TINY }}
-      >
-        $ {data.price}
-      </Text>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('ProductDetail', {
+            title: data.title
+          })
+        }}>
+        <Image
+          source={{ uri: data.image }}
+          style={{
+            width: 170,
+            height: 170,
+            borderRadius: 100,
+            marginBottom: Spacing.MEDIUM
+          }}
+        />
+        <Text size="medium">{data.title}</Text>
+        <Text size="xsmall" color="gray">
+          {data.subtitle}
+        </Text>
+        <Text
+          size="small"
+          color="violet"
+          weight="bold"
+          style={{ marginTop: Spacing.TINY }}
+        >
+          $ {data.price}
+        </Text>
+      </TouchableOpacity>
     </View>
   )
 }

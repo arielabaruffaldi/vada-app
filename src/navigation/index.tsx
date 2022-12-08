@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 
-import ShopNavigator from './shop'
+import BottomTabsNavigator from '@navigation/BottomTab'
 
 const AppNavigation: FC = () => {
   return (
     <NavigationContainer>
-      <ShopNavigator />
+      <BottomTabsNavigator />
     </NavigationContainer>
   )
 }

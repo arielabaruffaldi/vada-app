@@ -11,7 +11,11 @@ const SearchBar: FC = () => {
   const [searchVal, setSearchVal] = useState('')
   return (
     <View style={styles.container}>
-      <AntDesign name="search1" size={24} color="black" />
+      <AntDesign
+        name="search1"
+        size={24}
+        color="black"
+      />
       <Input
         placeholder="Search"
         autoCapitalize="none"

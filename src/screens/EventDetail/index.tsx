@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import Banner from '@atoms/Banner'
 import Button from '@atoms/Button'
@@ -18,7 +18,7 @@ export interface Event {
   title: string
 }
 
-const EventDetail = () => {
+const EventDetail: FC = () => {
   const event = {
     categoryId: 23,
     description: 'Some description test',

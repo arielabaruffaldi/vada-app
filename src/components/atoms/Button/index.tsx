@@ -6,7 +6,7 @@ import { styles } from './styles'
 interface ButtonProps {
   disabled?: boolean
   onPress: () => any
-  variation?: 'contained' | 'text'
+  variation?: 'contained' | 'text' | 'outlined'
   color?: 'primary' | 'secondary' | 'tertiary'
   children: ReactNode
   style?: TextStyle | TextStyle[]

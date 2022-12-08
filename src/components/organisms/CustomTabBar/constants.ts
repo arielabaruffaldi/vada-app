@@ -14,11 +14,6 @@ export const OPTIONS = [
     title: 'Home'
   },
   {
-    path: 'Search',
-    icon: 'search1',
-    title: 'Search'
-  },
-  {
     path: 'Cart',
     icon: 'shoppingcart',
     title: 'Cart'

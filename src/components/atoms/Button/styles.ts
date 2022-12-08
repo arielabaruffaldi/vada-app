@@ -30,6 +30,11 @@ export const styles = StyleSheet.create({
   contained: {
     backgroundColor: Colors.violet
   },
+  outlined: {
+    borderWidth: 1,
+    borderColor: Colors.black,
+    backgroundColor: 'transparent'
+  },
   text: {
     backgroundColor: 'transparent',
     color: Colors.violet

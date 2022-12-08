@@ -29,8 +29,8 @@ const CartItem: React.FunctionComponent<CartItemProps> = ({
           Cantidad: {item.quantity}
         </Text>
       </View>
-      <Button style={styles.buttonDelete} variation="outline" onPress={() => onDelete(item.id)}>
-        <Icon size={14} height={14} name="trash-outline" fill={Colors.black} />
+      <Button style={styles.buttonDelete} variation="outlined" onPress={() => onDelete(item.id)}>
+        <Icon size={14} height={14} name="delete" fill={Colors.black} />
       </Button>
     </View>
   )

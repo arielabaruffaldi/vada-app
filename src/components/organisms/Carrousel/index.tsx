@@ -26,7 +26,7 @@ const Slide: FC<{ data: any }> = ({ data }) => {
     >
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('ProductDetail', {
+          navigation.navigate('EventDetail', {
             title: data.title
           })
         }}>

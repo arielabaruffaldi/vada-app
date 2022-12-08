@@ -1,22 +1,22 @@
-import React, {useEffect, useState} from 'react';
-import {View} from 'react-native';
+import React, { FC, useEffect, useState } from 'react'
+import { View } from 'react-native'
 
-import {OPTIONS} from './constants';
-import CustomTabBarItem from './CustomTabBarItem';
+import { OPTIONS } from './constants'
+import CustomTabBarItem from './CustomTabBarItem'
 
-import styles from './styles';
+import styles from './styles'
 
-const CustomTabBar = ({state, navigation}) => {
-  const [current, setCurrent] = useState(0);
+const CustomTabBar: FC<any> = ({ state, navigation }) => {
+  const [current, setCurrent] = useState(0)
 
   useEffect(() => {
-    const {index} = state;
-    setCurrent(index);
-  }, [state.index]);
+    const { index } = state
+    setCurrent(index)
+  }, [state.index])
 
   const onTabPress = (path: string) => {
-    navigation.navigate(path);
-  };
+    navigation.navigate(path)
+  }
   return (
     <View style={[styles.container]}>
       <View style={styles.content}>
@@ -31,7 +31,7 @@ const CustomTabBar = ({state, navigation}) => {
         ))}
       </View>
     </View>
-  );
-};
+  )
+}
 
-export default CustomTabBar;
+export default CustomTabBar

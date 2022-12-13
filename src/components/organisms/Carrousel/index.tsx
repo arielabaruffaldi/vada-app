@@ -12,9 +12,21 @@ import { NavigationScreenProp } from 'react-navigation'
 
 import Text from '@atoms/Text'
 import { Spacing } from '@theme/index'
+import { useDispatch } from 'react-redux'
+import { selectEvent } from '@store/actions/events'
+import { Event } from '@screens/EventDetail'
 
 const Slide: FC<{ data: any }> = ({ data }) => {
   const navigation: NavigationScreenProp<any, any> = useNavigation()
+  const dispatch = useDispatch()
+
+  const handleSelectedEvent = () => {
+    dispatch(selectEvent(data.id))
+
+    navigation.navigate('EventDetail', {
+      title: data.title
+    })
+  }
 
   return (
     <View
@@ -25,11 +37,7 @@ const Slide: FC<{ data: any }> = ({ data }) => {
       }}
     >
       <TouchableOpacity
-        onPress={() => {
-          navigation.navigate('EventDetail', {
-            title: data.title
-          })
-        }}>
+        onPress={handleSelectedEvent}>
         <Image
           source={{ uri: data.image }}
           style={{

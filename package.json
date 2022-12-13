@@ -26,11 +26,13 @@
     "react-native-safe-area-context": "4.4.1",
     "react-native-screens": "~3.18.0",
     "react-native-web": "~0.18.9",
-    "react-navigation": "^4.4.4"
+    "react-navigation": "^4.4.4",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "@types/": "react-navigation/native",
     "@types/react": "~18.0.14",
     "@types/react-native": "~0.70.6",
     "@types/react-query": "^1.2.9",

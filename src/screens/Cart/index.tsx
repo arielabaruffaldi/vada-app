@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+import React, { FC } from 'react'
 import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
@@ -7,37 +8,24 @@ import Layout from '@organisms/Layout'
 import CartFooter from './CartFooter'
 import CartItem from './CartItem'
 import styles from './styles'
+import { RootState } from '@store/index'
+import { useDispatch, useSelector } from 'react-redux'
+import { confirmCart, removeItem } from '@store/actions/cart'
 
-// import { CART } from '@utils/data/cart';
-
-const Cart = () => {
+const Cart: FC = () => {
+  const dispatch = useDispatch()
   const navigation = useNavigation()
+  const items = useSelector((state: RootState) => state.cart.items)
 
-  const items = [
-    {
-      id: 1,
-      image: 'test',
-      title: 'Title 1',
-      price: 123,
-      quantity: 2
-    },
-    {
-      id: 2,
-      image: 'test2',
-      title: 'Title 2',
-      price: 33,
-      quantity: 1
-    }
-  ]
-
-  const total = 100
+  const total = useSelector((state: RootState) => state.cart.total)
 
   const handleConfirmCart = () => {
+    dispatch(confirmCart(items, total))
     navigation.navigate('Orders')
   }
 
   const handleOnDelete = (id: number) => {
-    console.warn(`handle on delete ${id}`)
+    dispatch(removeItem(id))
   }
 
   return (

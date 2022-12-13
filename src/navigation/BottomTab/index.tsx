@@ -7,13 +7,7 @@ import SearchStackNavigation from '../Search'
 import CartStackNavigation from '../Cart'
 import FavouritesStackNavigation from '../Favourites'
 import ProfileStackNavigation from '../Profile'
-/*
-import HomeStackNavigation from '@navigation/HomeStackNavigation'
-import SearchStackNavigation from '@navigation/Search'
-import CartStackNavigation from '@navigation/Cart'
-import FavouritesStackNavigation from '@navigation/Favourites'
-import ProfileStackNavigation from '@navigation/Profile'
- */
+
 const Tab = createBottomTabNavigator()
 
 const BottomTabsNavigator: FC = () => {

@@ -1,10 +1,8 @@
-import Home from '@assets/svg/HomeIcon'
 
 // https://akveo.github.io/eva-icons/#/?searchKey=user&type=outline
 
 export interface OptionItem {
   path: string
-  icon: typeof Home
   nameCode: number
 }
 export const OPTIONS = [

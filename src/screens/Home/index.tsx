@@ -5,41 +5,11 @@ import { AntDesign } from '@expo/vector-icons'
 import Carrousel from '@organisms/Carrousel'
 import SearchBar from '@organisms/SearchBar'
 import { Colors, Spacing } from '@theme/index'
+import { EVENTS } from '@utils/data/events'
 import { FC } from 'react'
 import { View } from 'react-native'
 
 import styles from './styles'
-
-const slideList = [
-  {
-    id: 1,
-    image: `https://picsum.photos/1440/2842?random=${1}`,
-    title: 'Apple Watch',
-    subtitle: 'Series 6 . Red',
-    price: '359'
-  },
-  {
-    id: 2,
-    image: `https://picsum.photos/1440/2842?random=${2}`,
-    title: 'Samsung Watch',
-    subtitle: 'Series 6 . Red',
-    price: '159'
-  },
-  {
-    id: 3,
-    image: `https://picsum.photos/1440/2842?random=${3}`,
-    title: 'Apple Watch',
-    subtitle: 'Series 6 . Red',
-    price: '359'
-  },
-  {
-    id: 4,
-    image: `https://picsum.photos/1440/2842?random=${4}`,
-    title: 'Samsung Watch',
-    subtitle: 'Series 6 . Red',
-    price: '159'
-  }
-]
 
 const Home: FC = () => {
   return (
@@ -47,12 +17,12 @@ const Home: FC = () => {
       <PaddingWrapper hasPadding style={styles.container}>
         <SearchBar />
         <Text size="large" weight="bold" style={styles.title}>
-          Order online, collect in store
+          No te pierdas ningún evento
         </Text>
         <Text color="violet" style={styles.carrouselTitle}>
-          Watches
+          Eventos
         </Text>
-        <Carrousel data={slideList} />
+        <Carrousel data={EVENTS} />
         <View style={{ alignSelf: 'flex-end', marginTop: Spacing.SMALL }}>
           <Button
             onPress={() => console.warn('TEST')}

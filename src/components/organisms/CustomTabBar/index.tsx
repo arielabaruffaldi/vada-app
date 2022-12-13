@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React, { FC, useEffect, useState } from 'react'
 import { View } from 'react-native'
 

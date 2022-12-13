@@ -8,6 +8,9 @@ import { View, TouchableOpacity, Text as TextNative } from 'react-native'
 import Layout from '@organisms/Layout'
 
 import styles from './styles'
+import { addItem } from '@store/actions/cart'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '@store/index'
 
 export interface Event {
   categoryId: number
@@ -19,18 +22,13 @@ export interface Event {
 }
 
 const EventDetail: FC = () => {
-  const event = {
-    categoryId: 23,
-    description: 'Some description test',
-    id: 133,
-    image: 'urlTest',
-    price: 400,
-    title: 'Title Test'
-  }
+  const dispatch = useDispatch()
 
   const handleAddItem = () => {
-    console.log('aca')
+    dispatch(addItem(event))
   }
+
+  const event: Event = useSelector((state: RootState) => state.events.selected)
 
   return (
     <Layout hasPadding title={event?.title}>

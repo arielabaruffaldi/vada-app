@@ -1,28 +1,27 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import { View } from 'react-native'
 
 import EventsList from '@organisms/EventsList'
 import Layout from '@organisms/Layout'
 
 import styles from './styles'
+import { useDispatch, useSelector } from 'react-redux'
+import { filterEvents } from '@store/actions/events'
 
 const Events: FC = () => {
-  const filteredEvents = [
-    {
-      id: 1,
-      categoryId: 23,
-      title: 'Title 1',
-      description: 'Description test',
-      image: 'url1'
-    },
-    {
-      id: 2,
-      categoryId: 24,
-      title: 'Title 2',
-      description: 'Description test 2',
-      image: 'url2'
-    }
-  ]
+  const dispatch = useDispatch()
+
+  const selectedCategory = useSelector(
+    (state: any) => state.categories.selected
+  )
+  const filteredEvents = useSelector(
+    (state: any) => state.events.filteredEvents
+  )
+
+  useEffect(() => {
+    dispatch(filterEvents(selectedCategory.id))
+  }, [])
+
   return (
     <Layout hasPadding>
       <View style={styles.box}>

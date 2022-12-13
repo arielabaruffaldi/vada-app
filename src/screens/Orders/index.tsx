@@ -1,21 +1,18 @@
 import Text from '@atoms/Text'
 import Layout from '@organisms/Layout'
+import { RootState } from '@store/'
+import { getOrders } from '@store/actions/orders'
 import React, { useEffect } from 'react'
 import { View } from 'react-native'
+import { useSelector, useDispatch } from 'react-redux'
 
 const Orders = () => {
-  const orders = [
-    {
-      id: 1,
-      total: 300,
-      items: [
-        {
-          title: 'Order 1',
-          id: 232
-        }
-      ]
-    }
-  ]
+  const dispatch = useDispatch()
+  const orders = useSelector((state: RootState) => state.orders.orders)
+
+  useEffect(() => {
+    dispatch(getOrders())
+  }, [])
 
   return (
     <Layout hasPadding>

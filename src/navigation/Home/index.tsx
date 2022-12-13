@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import Home from '@screens/Home'
 import EventDetail from '@screens/EventDetail'
+import HomeHeader from '@organisms/HomeHeader'
 
 const Stack = createNativeStackNavigator()
 
@@ -11,9 +12,14 @@ const HomeStackNavigation: FC = () => {
     <Stack.Navigator
       initialRouteName="HomeScreen"
       screenOptions={() => ({
-        headerShown: false
+        headerShown: false,
+        lazy: false
       })}>
-      <Stack.Screen name="HomeScreen" component={Home} />
+      <Stack.Screen
+        name="HomeScreen"
+        component={Home}
+        options={{ headerTitle: props => <HomeHeader {...props} /> }}
+      />
       <Stack.Screen name="EventDetail" component={EventDetail} />
     </Stack.Navigator>
   )

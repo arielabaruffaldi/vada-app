@@ -1,20 +1,19 @@
-import React from 'react';
-import {View, TouchableOpacity} from 'react-native';
-import Search from '@assets/svg/Search';
+import React, { ReactNode } from 'react'
+import { View } from 'react-native'
 
-import styles from './styles';
-import Text from '@atoms/Text';
-import {Colors} from '@theme';
+import styles from './styles'
+import Text from '@atoms/Text'
 
-interface HomeHeaderProps {}
+interface HomeHeaderProps {
+  children: ReactNode | ReactNode[]
+}
 
 const HomeHeader: React.FunctionComponent<HomeHeaderProps> = props => {
   return (
     <View style={styles.container}>
-      <Search width="12" fill={Colors.error} />
       <Text>{props.children}</Text>
     </View>
-  );
-};
+  )
+}
 
-export default HomeHeader;
+export default HomeHeader

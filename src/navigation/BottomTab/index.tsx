@@ -13,6 +13,11 @@ const Tab = createBottomTabNavigator()
 const BottomTabsNavigator: FC = () => {
   return (
     <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        unmountOnBlur: true,
+        lazy: false
+      }}
       initialRouteName="Home"
       tabBar={(props: any) => <CustomTabBar {...props} />}>
       <Tab.Screen name="Home" component={HomeStackNavigation} />
